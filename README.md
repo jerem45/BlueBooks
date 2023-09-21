@@ -3,7 +3,7 @@ Création d'un site avec un formulaire d'inscription et de connexion en php et M
 
 ## Déscription
 
-L'objectif principal du mini-projet BlueBooks était de développer un espace de connexion/inscription entièrement opérationnel, avec la capacité de récupérer et de traiter efficacement les données associées.
+L'objectif principal du mini-projet BlueBooks était de développer un espace de connexion/inscription entièrement opérationnel et sécurisé, avec la capacité de récupérer et de traiter efficacement les données associées.
 
 ### Technologie 
 0. LINUX / UNBUTU
@@ -27,6 +27,6 @@ L'objectif principal du mini-projet BlueBooks était de développer un espace de
 ##### espace d'inscription
 ![Capture d’écran du 2023-09-21 16-57-46](https://github.com/jerem45/BlueBooks/assets/66945318/878ceae1-35ea-4f22-bdb5-4d037f8c8c4c)
 
-##### espace d'inscription
+##### espace de connexion
 ![Capture d’écran du 2023-09-21 16-41-24](https://github.com/jerem45/BlueBooks/assets/66945318/36fd6372-0403-45d6-940e-863ee92951fe)
 
