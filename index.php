@@ -1,25 +1,19 @@
 <?php 
-//on doit enore recupérer la session initialisé depuis la pge d'accueil
 session_start();
-//connexion a la base de donnée
+
 require('src/bddConnection.php');
- //condition qui test si les informations du formulaire on été envoyer
+
 if(!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['password'])&& !empty($_POST['passwordAvailable'])){
  
-    //stocker toutes les info du form dans des variables
     $pseudo = $_POST['pseudo'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $passwordAvailable =$_POST['passwordAvailable'];
   
-
-    //test si password = passwordAvailable
     if($password != $passwordAvailable){
         header('location: index.php?error=1&pass=1');exit();
     }
       
-    //les sécurité 
-    //email déja utilisé?
     $req = $bdd->prepare('SELECT count(*) as numberEmail FROM users WHERE email = ?');
     $req->execute(array($email));
     while($emailVerification = $req->fetch()){
@@ -27,15 +21,12 @@ if(!empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['passwor
         header('location: index.php?error=1$email=1');exit();
         }   
     };
-    //le hash du mots de passe
     
     $password = sha1($password."1256");
-
-    //le hash du secret
+ 
     $secret = sha1($email).time();
     $secret = sha1($secret).time().time();
 
-    //envoie de la request
     $req = $bdd->prepare('INSERT INTO users(pseudo,email,password,secret)
                         VALUES (?,?,?,?)
                         ');

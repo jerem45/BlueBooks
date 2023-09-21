@@ -1,29 +1,22 @@
 <?php 
-    //Création de la session qui va rediriger l'utilisateur vers la page d'accueil
     session_start();
     if(isset($_SESSION['connect'])){
         header('location: index.php?user_is_connected');exit();
     }
 
-    //bdd connection
     require('src/bddConnection.php');
    
-    //véification des champs si remplis
     if(!empty($_POST['email'])&&!empty($_POST['password'])){
 
-        //variable de récupération des données
         $email = $_POST['email'];
         $password = $_POST['password']; 
         $error = 1;
-
-        //hash du mot du mot de passe 
         $password = sha1($password."1256");
 
-        //vérification de l'email de l'utilisareur dans la bdd
+
         $req = $bdd->prepare('SELECT * FROM users WHERE email = ?');
         $req->execute(array($email));
 
-        //Boucle wile pour la vérification ligne par ligne
         while($data = $req->fetch()){
             if($password == $data['password']){
                 $error = 0;
