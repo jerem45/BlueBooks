@@ -24,4 +24,6 @@ L'objectif principal du mini-projet BlueBooks était de développer un espace de
 
 #### Visuel du projet
 
+![Capture d’écran du 2023-09-21 16-40-56](https://github.com/jerem45/BlueBooks/assets/66945318/091c5bd4-df52-4a25-ad27-94d3af856fd0)
+![Capture d’écran du 2023-09-21 16-41-24](https://github.com/jerem45/BlueBooks/assets/66945318/36fd6372-0403-45d6-940e-863ee92951fe)
 
